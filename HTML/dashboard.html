@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Onestep</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        /* HTML and Body Layout */
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            /* Arrange elements vertically */
+        }
+    
+        /* Body Styling */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+    
+        /* Navbar */
+        nav {
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+    
+        nav div {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    
+        nav a:hover {
+            background-color: #45a049;
+        }
+    
+        /* Main Content */
+        main {
+            flex: 1;
+            /* Push the footer down if the content is short */
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    
+        /* Dashboard Section */
+        .dashboard h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #4CAF50;
+        }
+    
+        .dashboard p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    
+        .dashboard ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .dashboard li {
+            margin-bottom: 0.5rem;
+        }
+    
+        .dashboard a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+    
+        .dashboard a:hover {
+            text-decoration: underline;
+        }
+    
+        .dashboard .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    
+        .dashboard .btn:hover {
+            background-color: #45a049;
+        }
+    
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            width: 100%;
+            margin-top: auto;
+            /* Ensure footer stays at the bottom */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>Onestep</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="notifications.html">Notifications</a>
+        </div>
+    </nav>
+    <main>
+        <section class="dashboard">
+            <h1>Welcome to Your Dashboard</h1>
+            <p>Here are your latest journal entries:</p>
+            <ol id="entriesList">
+                <!-- Entries will be dynamically inserted here -->
+            </ol>
+            <a href="entry_create.html" class="btn">Create New Entry</a>
+        </section>
+    </main>
+    <footer>
+        <p>Onestep © 2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to fetch entries and display them
+        async function fetchEntries() {
+            const token = localStorage.getItem('token'); // Get the token from localStorage
+
+            if (!token) {
+                alert('Please log in first.');
+                return;
+            }
+
+            try {
+                // Fetch the entries from the backend
+                const response = await fetch('http://localhost:5000/entries', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch entries');
+                }
+
+                const entries = await response.json();
+
+                const entriesList = document.getElementById('entriesList');
+                entriesList.innerHTML = ''; // Clear the list before adding new entries
+
+                // Loop through entries and create a list item for each one
+                entries.forEach(entry => {
+                    const listItem = document.createElement('li');
+                    const entryLink = document.createElement('a');
+                    entryLink.href = `entry_detail.html?id=${entry._id}`; // Link to the entry detail page
+                    entryLink.textContent = `${entry.title}`; // Set entry title
+                    listItem.appendChild(entryLink);
+                    entriesList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching entries:', error);
+                alert('Error fetching entries: ' + error.message);
+            }
+        }
+
+        // Call the function to fetch and display the entries when the page loads
+        window.onload = fetchEntries;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Onestep</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        /* HTML and Body Layout */
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            /* Arrange elements vertically */
+        }
+    
+        /* Body Styling */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+    
+        /* Navbar */
+        nav {
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+    
+        nav div {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    
+        nav a:hover {
+            background-color: #45a049;
+        }
+    
+        /* Main Content */
+        main {
+            flex: 1;
+            /* Push the footer down if the content is short */
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    
+        /* Community Section */
+        .community h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #4CAF50;
+        }
+    
+        .community ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .community li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+    
+        .community a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    
+        .community a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            width: 100%;
+            margin-top: auto;
+            /* Ensure footer stays at the bottom */
+        }
+    </style>
+<body>
+    <nav>
+        <div>Onestep</div>
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+    </nav>
+    <main>
+        <section class="community">
+            <h1>Community Entries</h1>
+            <ul>
+                <li><a href="entry_detail.html">User1: Reflections on Success</a></li>
+                <li><a href="entry_detail.html">User2: Gratitude Journal</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Onestep © 2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>

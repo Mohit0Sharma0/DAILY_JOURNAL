@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Onestep</title>
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* HTML and Body Layout */
+    html,
+    body {
+        height: 100%;
+        /* Ensure the body and HTML elements take full height */
+        display: flex;
+        flex-direction: column;
+        /* Arrange elements vertically */
+    }
+
+    /* Body Styling */
+    body {
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+        background-color: #4CAF50;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    nav div {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    nav a:hover {
+        background-color: #45a049;
+    }
+
+    /* Main Content */
+    main {
+        flex: 1;
+        /* Allow the main content to grow and push the footer down */
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    /* Notifications Section */
+    .notifications h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #4CAF50;
+    }
+
+    .notifications ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .notifications li {
+        background-color: #f1f1f1;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+    }
+
+    .notifications li:nth-child(even) {
+        background-color: #e9f5e9;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        font-size: 0.9rem;
+        width: 100%;
+        margin-top: auto;
+        /* Push footer to the bottom if content is short */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        main {
+            margin: 1rem;
+            padding: 15px;
+        }
+
+        nav {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
+</head>
+<body>
+    <nav>
+        <div>Onestep</div>
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+    </nav>
+    <main>
+        <section class="notifications">
+            <h1>Notifications</h1>
+            <ul>
+                <li>Reminder: Write your journal entry for today!</li>
+                <li>New feature update: You can now share entries!</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Onestep © 2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>

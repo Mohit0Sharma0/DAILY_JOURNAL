@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Onestep</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        /* HTML and Body Layout */
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            /* Arrange elements vertically */
+        }
+    
+        /* Body Styling */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+    
+        /* Navbar */
+        nav {
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+    
+        nav div {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    
+        nav a:hover {
+            background-color: #45a049;
+        }
+    
+        /* Main Content */
+        main {
+            flex: 1;
+            /* Push the footer down if the content is short */
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    
+        /* Help & Support Section */
+        .help-support h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #4CAF50;
+        }
+    
+        .help-support h2 {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: #333;
+        }
+    
+        .help-support ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .help-support li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+    
+        .help-support li strong {
+            color: #4CAF50;
+        }
+    
+        /* Form Styling */
+        .help-support form {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    
+        .help-support label {
+            font-weight: bold;
+        }
+    
+        .help-support textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+    
+        .help-support button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .help-support button:hover {
+            background-color: #45a049;
+        }
+    
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            width: 100%;
+            margin-top: auto;
+            /* Ensure footer stays at the bottom */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>Onestep</div>
+        <div>
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+    <main>
+        <section class="help-support">
+            <h1>Help & Support</h1>
+            <h2>FAQs</h2>
+            <ul>
+                <li><strong>How do I reset my password?</strong> Go to the recovery page and enter your email.</li>
+                <li><strong>Can I share entries?</strong> Yes, use the community page to share public entries.</li>
+            </ul>
+            <h2>Contact Us</h2>
+            <form action="#" method="POST">
+                <label for="query">Your Question:</label>
+                <textarea id="query" name="query" rows="5" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Onestep © 2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>
